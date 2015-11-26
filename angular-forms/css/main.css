@@ -1,0 +1,44 @@
+body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+label {
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #EEE;
+    font-size: 0.8em;
+}
+
+tfoot td {
+    font-size: 0.8em;
+}
+
+.validation-error {
+    color: #DD0000;
+    font-size: 0.75em;
+}
+
+form .ng-dirty.ng-invalid {
+    border: 1px solid #dd0000;
+}
+
+form .ng-dirty.ng-valid {
+    border: 1px solid #00DD00;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,46 @@
+<h1>Edit {{contact.fname}} {{contact.lname}}</h1>
+
+<form name="contactForm" novalidate ng-submit="save()">
+    <div class="form-group">
+        <label for="fnameInp">First Name:</label>
+        <input type="text" class="form-control" id="fnameInp" name="fnameInp" ng-model="contact.fname" required/>
+    </div>
+    <div class="form-group">
+        <label for="lnameInp">Last Name:</label>
+        <input type="text" class="form-control" id="lnameInp" name="lnameInp" ng-model="contact.lname" required/>
+        <p class="validation-error" ng-if="contactForm.lnameInp.$error.required">Last name is required</p>
+    </div>
+    <div class="form-group">
+        <label for="phoneInp">Phone:</label>
+        <input type="text" class="form-control" id="phoneInp" name="phoneInp" ng-model="contact.phone" pattern="\d{3}-\d{3}-\d{4}"/>
+        <p class="validation-error" ng-if="contactForm.phoneInp.$error.pattern">Phone must be xxx-xxx-xxxx</p>
+    </div>
+    <div class="form-group">
+        <label for="dobInp">Date of birth:</label>
+        <input type="text" class="form-control" id="dobInp" name="dobInp" ng-model="contact.dob"
+                placeholder="date of birth" in-the-past />
+        <p class="validation-error" ng-if="contactForm.dobInp.$error.inThePast">
+            Date of birth must be in the past
+        </p>
+    </div>
+    
+    <div class="form-group">
+        <label for="shoeInp">Shoe Size:</label>
+        <input type="number" class="form-control" id="shoeInp" name="shoeInp" ng-model="contact.shoeSize"
+                required min="4" max="17" step="0.5"/>
+        <p class="validation-error" ng-if="contactForm.shoeInp.$error.min">
+            Shoe size must be at least 4
+        </p>
+        <p class="validation-error" ng-if="contactForm.shoeInp.$error.max">
+            Shoe size must be less than 18
+        </p>
+        <p class="validation-error" ng-if="contactForm.shoeInp.$error.required">
+            Shoe size is required
+        </p>
+    </div>
+    
+    <div class="form-group">
+        <a class="btn btn-default" ui-sref="list">Cancel</a>
+        <button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Save</button>
+    </div>
+</form>
