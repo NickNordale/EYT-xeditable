@@ -1,6 +1,6 @@
 # EYT-xeditable
 
-# Angular-xeditable
+### Angular-xeditable
 
 Angular-xeditable is a bundle of AngularJS directives that allows you to create editable elements.
 Such technique is also known as click-to-edit or edit-in-place.
