@@ -2,7 +2,7 @@
     script file for the index.html page
 */
 
-angular.module('ContactsApp', ['ui.router', 'angular-uuid', 'LocalStorageModule'])
+angular.module('ContactsApp', ['ui.router', 'angular-uuid', 'LocalStorageModule', 'xeditable'])
     .constant('storageKey', 'contacts-list')
     .factory('contacts', function(localStorageService, storageKey) {
         return localStorageService.get(storageKey) || [];
@@ -42,10 +42,14 @@ angular.module('ContactsApp', ['ui.router', 'angular-uuid', 'LocalStorageModule'
     .controller('ContactsController', function($scope, contacts) {
         $scope.contacts = contacts;
     })
-    .controller('ContactDetailController', function($scope, $stateParams, $state, contacts) {
+    .controller('ContactDetailController', function($scope, $stateParams, $state, contacts, localStorageService, storageKey) {
         $scope.contact = contacts.find(function(contact) {
             return contact.id === $stateParams.id;
         });
+
+        $scope.saveChanges = function() {
+            localStorageService.set(storageKey, contacts);
+        };
     })
     .controller('EditContactController', function($scope, $stateParams, $state, uuid, localStorageService, storageKey, contacts) {
 
