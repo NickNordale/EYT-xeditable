@@ -11,4 +11,6 @@ I can't really think of any cautionary warnings. You can find many, many example
 
 To showcase the abilities of this module, I used the contact list demo from class. In my code you'll see I use xeditable in the Contact details view. So now, in the Contact details view, you can make and save changes to the contact without having to open up a whole new view or page.
 
-Here's where I would start to learn about all the things you can do with xeditable: http://vitalets.github.io/angular-xeditable/
+Here's my example: http://students.washington.edu/nordale1/info343/challenges/EYT-xeditable/angular-forms/#/contacts
+
+Here's where I would go to learn about all the things you can do with xeditable: http://vitalets.github.io/angular-xeditable/
